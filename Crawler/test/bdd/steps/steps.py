@@ -1,13 +1,13 @@
 from lettuce import *
 from nose.tools import assert_equal, assert_in
 from webtest import TestApp
-from crawler import app
+import subprocess
 import os
 
 @step(u'Given the crawler is started')
 def given_the_crawler_is_started(step):
-	os.system('crawler.py')
-
+	print os.system('python crawler.py')
+	
 @step(u'And the homepage is verified')
 def given_the_homepage_is_verified(step):
 	assert 1 == 1

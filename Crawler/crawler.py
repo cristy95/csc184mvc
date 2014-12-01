@@ -5,8 +5,6 @@ import threading
 import urllib
 from urlparse import urlparse, urljoin
 from BeautifulSoup import BeautifulSoup
-from flask import Flask
-app = Flask(__name__)
 
 class Singleton(object):
 	def __new__(cls):
@@ -138,6 +136,3 @@ if __name__ == '__main__':
 	# Start new Threads
 	thread1.start()
 	thread2.start()
-
-	
-	app.run(debug=True)
