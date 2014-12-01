@@ -11,7 +11,7 @@ Scenario: Downloading images when crawler is not started
 
 Scenario: Download images from a website
 		Given the crawler is started
-		And the link tipidpc.com is verified
+		And the link is verified
 		When it finishes the download
 		Then I should see the following images on its folder:
 		|file_name			|

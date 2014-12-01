@@ -27,8 +27,8 @@ def then_i_should_see_the_following_images_on_its_folder(step):
 def given_the_crawler_is_not_started(step):
 	pass
 
-@step(u'Then I should not see the following images on its folder:')
-def then_i_should_not_see_the_following_images_on_its_folder(step):
+@step(u'Then I should not see the following images on the folder:')
+def then_i_should_not_see_the_following_images_on_the_folder(step):
 	for row in step.hashes:
 		name = row['file_name']
 		state = os.path.exists("/home/cristylorainefuerzas/Documents/school/csc184/csc184mvc/Crawler/images/" + name)
