@@ -8,8 +8,8 @@ import os
 def given_the_crawler_is_started(step):
 	print os.system('python crawler.py')
 	
-@step(u'And the homepage is verified')
-def given_the_homepage_is_verified(step):
+@step(u'And the link is verified')
+def given_the_link_is_verified(step):
 	assert 1 == 1
 
 @step(u'When it finishes the download')
@@ -22,3 +22,14 @@ def then_i_should_see_the_following_images_on_its_folder(step):
 		name = row['file_name']
 		state = os.path.exists("/home/cristylorainefuerzas/Documents/school/csc184/csc184mvc/Crawler/images/" + name)
 		assert_equal(state, True)
+
+@step(u'Given the crawler is not started')
+def given_the_crawler_is_not_started(step):
+	pass
+
+@step(u'Then I should not see the following images on its folder:')
+def then_i_should_not_see_the_following_images_on_its_folder(step):
+	for row in step.hashes:
+		name = row['file_name']
+		state = os.path.exists("/home/cristylorainefuerzas/Documents/school/csc184/csc184mvc/Crawler/images/" + name)
+		assert_equal(state, False)
